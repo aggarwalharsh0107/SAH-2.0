@@ -1,8 +1,8 @@
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-family: 'Gilroy';
+    font-family: "Gilroy", sans-serif;
 }
 
 html,
@@ -11,17 +11,136 @@ body {
     width: 100%;
 }
 
-.main {
-    background-color: #0F0D0D;
+body {
+    background-color: #0f0d0d;
+    color: #fff;
 }
 
-.page1 {
-    height: 100vh;
-    width: 100%;
-}
-
+/* NAV */
 .nav {
     height: 60px;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav img {
+    height: 30px;
+}
+
+.nav-part2 {
+    display: flex;
+    gap: 24px;
+}
+
+.nav h4 {
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+}
+
+a::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
     width: 100%;
-    background-color: red;
+    height: 2px;
+    background: white;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+a:hover::after {
+    transform: scaleX(1);
+}
+
+/* HERO */
+.page1 {
+    height: 800px;
+}
+
+.img-container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 8vw;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#hero-h1 {
+    font-size: 5vw;
+    font-weight: 300;
+}
+
+#hero-h3 {
+    font-size: 2vw;
+    font-weight: 300;
+    margin-top: 1vw;
+}
+
+.hero-button {
+    margin-top: 2vw;
+    margin-right: 15px;
+    padding: 12px 26px;
+    border-radius: 30px;
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+}
+
+.main-image img {
+    height: 400px;
+    width: 400px;
+    border-radius: 40px;
+    margin-top: 40px;
+}
+
+/* PAGE 2 */
+.page2 {
+    min-height: 120vh;
+}
+
+.hero-img {
+    background: white;
+    color: #111;
+    width: 95%;
+    margin: auto;
+    border-radius: 40px;
+    padding: 6vw 0;
+}
+
+.hero-img * {
+    color: #111;
+}
+
+.page2-h1 {
+    font-size: 6vw;
+    font-weight: 300;
+    margin-left: 6vw;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    margin-top: 4vw;
+}
+
+.box,
+.box2 {
+    width: 400px;
+    height: 300px;
+    border-radius: 40px;
+    background: #111;
 }

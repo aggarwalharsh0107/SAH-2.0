@@ -2,20 +2,65 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Phraser | AI Powered Resume Phraser</title>
+    <link rel="shortcut icon" href="./assets/android-chrome-192x192.png" type="image/svg+xml">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="main">
-        <div class="page1">
-            <div class="nav">
-                <img src="" alt="">
+    <div class="main" data-scroll-container>
+
+        <!-- PAGE 1 -->
+        <section class="page1" data-scroll-section>
+            <nav class="nav">
+                <img src="./assets/android-chrome-192x192.png" alt="logo">
+                <div class="nav-part2">
+                    <h4><a href="#">Home</a></h4>
+                    <h4><a href="#">Work</a></h4>
+                    <h4><a href="#">About</a></h4>
+                    <h4><a href="#">Contact</a></h4>
+                </div>
+            </nav>
+
+            <div class="img-container">
+                <div class="hero-text">
+                    <h1 id="hero-h1">AI Resume Phraser</h1>
+                    <h3 id="hero-h3">Upgrade your resume with powerful AI phrasing</h3>
+                    <button class="hero-button">Get Started</button>
+                    <button class="hero-button">Learn More</button>
+                </div>
+                <div class="main-image">
+                    <img src="./assets/hero-img.png" alt="hero">
+                </div>
             </div>
-        </div>
+        </section>
+
+        <!-- PAGE 2 -->
+        <section class="page2" data-scroll-section>
+            <div class="hero-img">
+                <h1 class="page2-h1">Key Features</h1>
+
+                <div class="container">
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box2"></div>
+                    <div class="box2"></div>
+                    <div class="box2"></div>
+                </div>
+            </div>
+        </section>
+
     </div>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
     <script src="script.js"></script>
 </body>
 
