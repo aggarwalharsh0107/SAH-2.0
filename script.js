@@ -55,7 +55,7 @@ gsap.from(".page2-h1, .box , .box h1 , .box p", {
     stagger: 0.15,
     ease: "power3.out",
     scrollTrigger: {
-        trigger: ".hero-img",
+        trigger: ".page2-container",
         scroller: ".main",
         start: "top 80%",
         end: "top 20%",
@@ -70,7 +70,7 @@ gsap.from(".box2 , .box2 h1, .box2 p", {
     stagger: 0.15,
     ease: "power3.out",
     scrollTrigger: {
-        trigger: ".hero-img",
+        trigger: ".page2-container",
         scroller: ".main",
         start: "top -10%",
         end: "top -20%",
