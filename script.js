@@ -48,7 +48,7 @@ tl.to("#hero-h1, #hero-h3, .hero-button", { x: -800 }, "move")
     .to(".hero-img", { width: "100%" });
 
 // PAGE 2 ANIMATIONS
-gsap.from(".page2-h1, .box", {
+gsap.from(".page2-h1, .box , .box h1 , .box p", {
     opacity: 0,
     y: 100,
     scale: 1,
@@ -63,7 +63,7 @@ gsap.from(".page2-h1, .box", {
     }
 });
 
-gsap.from(".box2", {
+gsap.from(".box2 , .box2 h1, .box2 p", {
     opacity: 0,
     y: 100,
     scale: 0.9,
