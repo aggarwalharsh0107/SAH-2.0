@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+AT:ital,wght@0,100..400;1,100..400&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -16,11 +18,53 @@ body {
     color: #fff;
 }
 
+/* ================= LOADER ================= */
+
+.loader-container {
+    position: fixed;
+    inset: 0;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+.loader-text-fill {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 6vw;
+    text-transform: uppercase;
+    position: relative;
+    color: #565656;
+    overflow: hidden;
+}
+
+/* gradient fill layer */
+.loader-text-fill::before {
+    content: attr(data-title);
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #f107ba, #155af0);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    width: 0%;
+    animation: textFill 2.5s ease backwards;
+}
+
+@keyframes textFill {
+    from { width: 0%; }
+    to { width: 100%; }
+}
+
+
 /* NAV */
 .nav {
-    margin-top: 20px;
+    margin-top: 0px;
     position: relative;
-    left: 25%;
+    left: 27%;
+    top: 20px;
     text-align: center;
     height: 60px;
     padding: 0 20px;
@@ -28,10 +72,8 @@ body {
     align-items: center;
     justify-content: space-between;
     border-radius: 60px;
-    /* color: #111;
-    background-color: #fff; */
-    width: 50%;
-    background: #f5f6fa;
+    width: 46%;
+    background: #111;
     border-radius: 40px;
     padding: 14px 30px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
@@ -57,7 +99,7 @@ body {
 a {
     text-decoration: none;
     position: relative;
-    color: #2c2c34;
+    color: white;
     font-weight: 600;
     transition: color 0.3s ease;
 }
@@ -79,13 +121,18 @@ a:hover::after {
 }
 
 .circle {
-    background-color: #111;
+    background-color: white;
     border-radius: 50%;
     height: 30px;
     width: 30px;
 }
 
 /* HERO */
+
+.main {
+    background-color: white;
+    color: #111;
+}
 .page1 {
     height: 610px;
 }
@@ -118,9 +165,9 @@ a:hover::after {
     margin-right: 10px;
     padding: 12px 28px;
     border-radius: 999px;
-    border: 1px solid #fff;
+    border: 1px solid black;
     background: transparent;
-    color: #fff;
+    color: black;
     cursor: pointer;
     overflow: hidden;
     transition: color 0.4s ease, border-color 0.4s ease;
@@ -131,7 +178,7 @@ a:hover::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: white;
+    background: black;
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.4s ease;
@@ -143,8 +190,8 @@ a:hover::after {
   }
   
   .hero-button:hover {
-    color: #111;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    color: white;
+    box-shadow: 0 0 20px #111(255, 255, 255, 0.4);
   }
   
 
