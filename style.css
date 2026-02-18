@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+AT:ital,wght@0,100..400;1,100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Playwrite+AT:ital,wght@0,100..400;1,100..400&display=swap');
 
 * {
     margin: 0;
@@ -31,8 +32,8 @@ body {
 }
 
 .loader-text-fill {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 6vw;
+    font-family: "Oswald", sans-serif;
+    font-size: 5vw;
     text-transform: uppercase;
     position: relative;
     color: #565656;
@@ -69,7 +70,7 @@ body {
     margin-top: 0px;
     top: 20px;
     text-align: center;
-    height: 90px;
+    height: 70px;
     padding: 0 20px;
     display: flex;
     align-items: center;
@@ -113,7 +114,7 @@ a::after {
     left: 0;
     width: 100%;
     height: 2px;
-    background: black;
+    background: white;
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
@@ -143,12 +144,24 @@ a:hover::after {
 }
 
 /* Center Image */
-.hero-image img {
+.hero-image {
+    position: relative;
+  }
+  
+  .hero-image img {
     height: 700px;
     width: 1000px;
-    z-index: 2;
-    position: relative;
-}
+    display: block;
+  }
+  
+  /* fade layer */
+  .hero-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(245,245,245,0.5); /* same as section bg */
+  }
+  
 
 /* Floating text base */
 .floating {
@@ -161,24 +174,83 @@ a:hover::after {
 
 /* Text positions */
 .text1 {
-    top: 10%;
-    left: 12%;
+    font-size: 110px;
+    font-weight: 800;
+    top: 8%;
+    left: 27%;
+    font-family: "Oswald", sans-serif;
+    color: black;
 }
 
 .text2 {
-    top: 20%;
-    right: 10%;
+    font-size: 110px;
+    font-weight: 800;
+    top: 8%;
+    left: 49%;
+    font-family: "Oswald", sans-serif;
+    color: black;
 }
 
 .text3 {
-    bottom: 18%;
-    left: 8%;
+    top: 10%;
+    left: 5%;
+    font-size: 50px;
+    font-weight: 800;
+    font-family: "Oswald", sans-serif;
+    color: black;
+    text-align: center;
+    width: 100px;
 }
 
 .text4 {
-    bottom: 12%;
-    right: 15%;
+    top: 10%;
+    right: 10%;
+    font-size: 50px;
+    font-weight: 800;
+    font-family: "Oswald", sans-serif;
+    color: black;
 }
+
+.hero-button {
+    display: flex;
+}
+
+.fill-btn {
+    position: absolute; 
+    bottom: 170px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 20px;
+    padding: 14px 34px;
+    background: transparent;
+    cursor: pointer;
+    overflow: hidden;
+    font-family: "Oswald", sans-serif;
+  }
+  
+  .fill-btn .label {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: 1px;
+    transition: color .4s ease;
+  }
+  
+  .fill-btn .fill {
+    position: absolute;
+    inset: 0;
+    background: #111;
+    transform: scaleX(0);
+    transform-origin: left;
+    z-index: 1;
+  }
+  
+  .fill-btn.filled .label {
+    color: #fff;
+  }
+  
+  
 
 
 /* PAGE 2 */
