@@ -7,14 +7,11 @@ window.addEventListener("load", () => {
   const master = gsap.timeline();
 
   master
-    /* ===== LOADER PHASE ===== */
 
     .set(".loader-container", { autoAlpha: 1 })
 
-    // wait for CSS text fill animation
     .to({}, { duration: 2.5 })
 
-    // loader text fades up
     .to(".loader-text-fill", {
       y: -60,
       opacity: 0,
@@ -22,27 +19,20 @@ window.addEventListener("load", () => {
       ease: "power2.in"
     })
 
-    // loader slides up
     .to(".loader-container", {
       yPercent: -100,
       duration: 0.9,
       ease: "power4.inOut"
     }, "-=0.2")
 
-    // page rises with loader
     .from(".main", {
       y: 120,
       duration: 0.9,
       ease: "power4.out"
     }, "<")
 
-    // remove loader from DOM flow
     .set(".loader-container", { display: "none" })
 
-    /* ===== INIT SITE ===== */
-    
-
-    /* ===== INTRO ANIMATION (SYNCED) ===== */
     .from(".nav img, .nav h4, #hero-h1, #hero-h3, .hero-button, .main-image", {
       opacity: 0,
       y: 60,
@@ -53,8 +43,6 @@ window.addEventListener("load", () => {
 
 });
 
-
-/* ================= SITE INIT ================= */
 
 function initSite() {
 
