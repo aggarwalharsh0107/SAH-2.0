@@ -2,57 +2,58 @@ gsap.registerPlugin(ScrollTrigger);
 
 window.addEventListener("load", () => {
 
+  // =============================
+  // Loader Animation (optional)
+  // =============================
   const tl = gsap.timeline();
 
-  tl
-    // loader visible
-    .set(".loader-container", { autoAlpha: 1 })
-
-    // fake load
-    .to({}, { duration: 1.8 })
-
-    // loader text exit
+  tl.set(".loader-container", { autoAlpha: 1 })
+    .to({}, { duration: 1 })
     .to(".loader-text-fill", {
       y: -60,
       opacity: 0,
       duration: 0.5,
-      ease: "power2.in"
+      ease: "power2.in",
     })
-
-    // loader slides up
     .to(".loader-container", {
       yPercent: -100,
-      duration: 0.9,
-      ease: "power4.inOut"
-    }, "-=0.2")
-
-    // 🔥 HERO ENTERS AT SAME TIME
+      duration: 0.8,
+      ease: "power4.inOut",
+    })
+    .set(".loader-container", { display: "none" })
     .from(
-      ".nav img, .nav h4, .hero-image, .floating, .text1, .text2, .text3, .text4, .fill-btn",
+      ".nav img, .nav h4, .hero-image, .floating, .fill-btn",
       {
         y: 80,
         opacity: 0,
         duration: 0.9,
         stagger: 0.12,
-        ease: "power3.out"
-      },
-      "-=0.4"   // overlaps with loader exit
-    )
+        ease: "power3.out",
+      }
+    );
 
-    // loader removed
-    .set(".loader-container", { display: "none" })
+  // =============================
+  // HORIZONTAL SCROLL SECTION
+  // =============================
+  const container = document.querySelector(".keydivs");
+  const section = document.querySelector(".page2");
 
-    // button fill after hero visible
-    .to(".fill-btn .fill", {
-      scaleX: 1,
-      duration: 1.1,
-      ease: "power3.out",
-      transformOrigin: "left"
-    }, "-=0.5")
+  if (!container || !section) return;
 
-    // label color change
-    .add(() => {
-      document.querySelector(".fill-btn")?.classList.add("filled");
-    });
+  const scrollAmount = container.scrollWidth - window.innerWidth;
+
+  gsap.to(container, {
+    x: -scrollAmount,
+    ease: "none",
+    scrollTrigger: {
+      trigger: section,
+      start: "top top",
+      end: () => "+=" + scrollAmount,
+      scrub: 1,
+      pin: true,
+      anticipatePin: 1,
+      invalidateOnRefresh: true,
+    },
+  });
 
 });

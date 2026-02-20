@@ -1,103 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LexivaRank | AI Powered Resume Phraser</title>
-    <link rel="shortcut icon" href="./assets/logo.png" type="image/svg+xml">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-    <!--Loading Page-->
-    <div class="loader-container">
+    <!-- Locomotive CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="main" data-scroll-container>
+      <!-- Loader -->
+      <div class="loader-container">
         <h1 data-title="LexivaRank" class="loader-text-fill">LexivaRank</h1>
+      </div>
+      <!-- PAGE 1 -->
+      <section class="page1">
+
+        <!-- 🎥 Background Video -->
+        <div class="hero-video">
+          <video autoplay loop muted playsinline>
+            <source src="./assets/background.mp4" type="video/mp4">
+          </video>
+        </div>
+      
+        <!-- 🌑 Overlay for readability -->
+        <div class="hero-overlay"></div>
+      
+        <!-- 🌟 Hero Content -->
+        <nav class="nav">
+          <img src="./assets/logo.png" alt="logo">
+          <div class="nav-part2">
+            <h4><a href="#">Home</a></h4>
+            <h4><a href="#">Work</a></h4>
+            <h4><a href="#">About</a></h4>
+            <h4><a href="#">Contact</a></h4>
+          </div>
+        </nav>
+      
+        <div class="hero-section">
+          <p class="floating text1">The Most Powerful</p>
+          <p class="floating text2">AI Resume Phraser</p>
+      
+          <button class="fill-btn">
+            <span class="fill"></span>
+            <span class="label">Get Started</span>
+          </button>
+        </div>
+      
+      </section>
+      <!-- PAGE 2 -->
+      <section class="page2" data-scroll-section>
+        <div class="page2-container">
+          <div class="page2-text-left"><h1>Key Features</h1></div>
+          <div class="page2-text-right">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+          </div>
+        </div>
+
+    <div class="horizontal-wrapper">
+        <div class="keydivs">
+          <div class="key-box"></div>
+          <div class="key-box"></div>
+          <div class="key-box"></div>
+          <div class="key-box"></div>
+          <div class="key-box"></div>
+          <div class="key-box"></div>
+        </div>
     </div>
-    <!-- PAGE 1 -->
-    <div class="main" data-scroll-container>
-        <section class="page1" data-scroll-section>
-            <nav class="nav">
-                <img src="./assets/logo.png" alt="logo">
-                <div class="nav-part2">
-                    <h4><a href="#">Home</a></h4>
-                    <h4><a href="#">Work</a></h4>
-                    <h4><a href="#">About</a></h4>
-                    <h4><a href="#">Contact</a></h4>
-                </div>
-                <div class="circle"></div>
-            </nav>
-            <div class="hero-section">
 
-                <!-- Main Center Image -->
-                <div class="hero-image">
-                    <img src="./assets/hero-img1.png" alt="hero">
-                </div>
-
-                <!-- Floating Text -->
-                <p class="floating text1">LEXIVA</p>
-                <p class="floating text2">RANK</p>
-                <p class="floating text3">The Most Powerful AI Resume Phraser</p>
-                <p class="floating text4">The Most Powerful AI Resume Phraser</p>
-                <button class="fill-btn">
-                    <span class="fill"></span>
-                    <span class="label">Get Started</span>
-                  </button>
-            </div>
-    </div>
-    </section>
-
-    <!-- PAGE 2
-        <section class="page2" data-scroll-section>
-            <div class="page2-container">
-                <h1 class="page2-h1">Key Features</h1>
-
-                <div class="container">
-                    <div class="box">
-                        <h1>Relative Resume Scoring</h1>
-                        <p>Normalizes scores across the applicant pool so candidates are ranked by competitive standing,
-                            not absolute thresholds.</p>
-                    </div>
-                    <div class="box">
-                        <h1>Configurable Scoring Engine</h1>
-                        <p>Uses a modular, pluggable architecture where weights and criteria can be customized for
-                            different job roles.</p>
-                    </div>
-                    <div class="box">
-                        <h1>Anti-Keyword Gaming</h1>
-                        <p>Prevents score inflation by penalizing excessive keyword repetition and rewarding meaningful
-                            semantic usage.</p>
-                    </div>
-                    <div class="box2">
-                        <h1>Partial Credit Mechanism</h1>
-                        <p>Awards probabilistic scores for inferred evidence using confidence thresholds, improving
-                            robustness against incomplete data.</p>
-                    </div>
-                    <div class="box2">
-                        <h1>Automated Emails Notification</h1>
-                        <p>Triggers configurable email notifications to shortlisted candidates, enabling end-to-end
-                            recruitment automation.</p>
-                    </div>
-                    <div class="box2">
-                        <h1>Skill–Project Validation</h1>
-                        <p>Cross-checks claimed skills against actual project and experience usage to reduce false skill
-                            listings.</p>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-
-    </div>
-    <!--Page 3-->
-
-
-    <!-- SCRIPTS -->
+      </section>
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
