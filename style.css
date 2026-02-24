@@ -166,6 +166,13 @@ body {
 
 .dropdown a:hover {
   background: #eee;
+<<<<<<< HEAD
+=======
+}
+
+.hidden {
+  display: none;
+>>>>>>> 93338859cdb177e485cfbbc1316a429cfd631e4b
 }
 
 .hidden {
@@ -179,7 +186,10 @@ body {
   overflow: hidden;
   color: white;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 93338859cdb177e485cfbbc1316a429cfd631e4b
 /* =================================================
    HERO VIDEO BACKGROUND
 ================================================= */

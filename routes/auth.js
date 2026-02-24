@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+// routes/auth.js
+>>>>>>> 93338859cdb177e485cfbbc1316a429cfd631e4b
 const express = require("express");
 const router = express.Router();
 const multer = require("multer");
@@ -37,6 +41,7 @@ router.get("/login", (req, res) => {
 
 router.post("/login", async (req, res) => {
     try {
+<<<<<<< HEAD
         const { email, password } = req.body;
 
         const user = await User.findOne({ email, password });
@@ -64,9 +69,35 @@ router.get("/logout", (req, res) => {
         res.redirect("/login?logout=success");
     });
 });
+=======
+      const { email, password } = req.body;
+  
+      const user = await User.findOne({ email, password });
+  
+      if (!user) {
+        return res.send("Invalid email or password ❌");
+      }
+  
+      // redirect with login flag
+      res.redirect("/?login=success");
+  
+    } catch (err) {
+      console.error(err);
+      res.send("Login error");
+    }
+  });
+
+router.get("/logout", (req, res) => {
+    res.redirect("/index.html");
+  });
+>>>>>>> 93338859cdb177e485cfbbc1316a429cfd631e4b
 
 router.get("/home", (req, res) => {
     res.redirect("/index.html");
 });
 
+<<<<<<< HEAD
 module.exports = router;
+=======
+module.exports = router;
+>>>>>>> 93338859cdb177e485cfbbc1316a429cfd631e4b
