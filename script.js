@@ -261,4 +261,145 @@ if (browse && fileInput) {
       xhr.send(formData);
     });
   });
+  /* ================= SCROLL SMOOTHER ================= */
+
+let smoother;
+
+function initSmoothScroll() {
+
+  // Disable smooth on mobile for performance
+  if (ScrollTrigger.isTouch === 1) {
+
+    smoother = null;
+
+  } else {
+
+    smoother = ScrollSmoother.create({
+      wrapper: "#smooth-wrapper",
+      content: "#smooth-content",
+      smooth: 1.2,
+      effects: true,
+      normalizeScroll: true
+    });
+
+  }
+
+  initAnimations();
+}
+
+
+
+/* ================= RESPONSIVE ANIMATIONS ================= */
+
+function initAnimations() {
+
+  ScrollTrigger.matchMedia({
+
+    /* ================= DESKTOP ================= */
+
+    "(min-width: 768px)": function () {
+
+      const container = document.querySelector(".keydivs");
+      const section = document.querySelector(".page2");
+
+      if (container && section) {
+
+        function createHorizontalScroll() {
+
+          const scrollAmount =
+            container.scrollWidth - section.offsetWidth;
+
+          gsap.to(container, {
+            x: () => -scrollAmount,
+            ease: "none",
+
+            scrollTrigger: {
+              trigger: section,
+              start: "top top",
+              end: () => "+=" + scrollAmount,
+              scrub: 1,
+              pin: true,
+              invalidateOnRefresh: true,
+              anticipatePin: 1,
+            }
+
+          });
+
+        }
+
+        createHorizontalScroll();
+
+        window.addEventListener("resize", () => {
+
+          ScrollTrigger.refresh();
+
+        });
+
+      }
+
+    },
+
+
+
+    /* ================= MOBILE ================= */
+
+    "(max-width: 767px)": function () {
+
+      // disable horizontal scroll on mobile
+      gsap.set(".keydivs", {
+        x: 0
+      });
+
+    }
+
+  });
+
+
+
+  /* ================= COMMON ANIMATIONS ================= */
+
+  gsap.utils.toArray(".card").forEach(card => {
+
+    gsap.from(card, {
+
+      opacity: 0,
+      y: 40,
+      duration: 0.6,
+
+      scrollTrigger: {
+        trigger: card,
+        start: "top 85%",
+        toggleActions: "play none none reverse"
+      }
+
+    });
+
+  });
+
+
+
+  gsap.utils.toArray(
+    ".upload-box, .contact-content, .contact-btn, .services, .clients"
+  ).forEach(el => {
+
+    gsap.from(el, {
+
+      opacity: 0,
+      y: 40,
+      duration: 0.6,
+
+      scrollTrigger: {
+        trigger: el,
+        start: "top 85%",
+      }
+
+    });
+
+  });
+
+
+
+  ScrollTrigger.refresh();
+
+}
 }
