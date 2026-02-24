@@ -205,7 +205,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* ================= LOGOUT ================= */
-<<<<<<< HEAD
 
 // logout button click
 document.getElementById("logoutBtn").addEventListener("click", () => {
@@ -215,13 +214,11 @@ document.getElementById("logoutBtn").addEventListener("click", () => {
     })
     .catch(err => console.log("Logout error:", err));
 });
-=======
 function logoutUser() {
   localStorage.removeItem("isLoggedIn");
-  window.location.href = "/";
+  window.location.href = "/login";
 }
 
->>>>>>> 93338859cdb177e485cfbbc1316a429cfd631e4b
 /* ================= FILE UPLOAD ================= */
 const fileInput = document.getElementById("fileInput");
 const browse = document.querySelector(".browse");

@@ -3,42 +3,32 @@ const app = express();
 const multer = require("multer");
 const session = require("express-session");
 const path = require("path");
-<<<<<<< HEAD
 const { exec } = require("child_process");
 const fs = require("fs");
 
 // ===== MongoDB Models =====
-const Document = require("../models/Document"); // NEW model
+const Document = require("../models/document"); // NEW model
 
 // ===== Multer Config =====
 const upload = multer({ dest: "uploads/" });
 
 const authRoutes = require('../routes/auth');
-=======
-
-const upload = multer({ dest: "uploads/" });
-
-const authRoutes = require('../routes/auth'); 
->>>>>>> 93338859cdb177e485cfbbc1316a429cfd631e4b
 
 // ===== Middleware =====
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use("/uploads", express.static("uploads"));
 
-<<<<<<< HEAD
 app.use(express.static(path.join(__dirname, "..")));
 
 // ===== View Engine =====
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
-=======
 // ===== View Engine =====
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 app.use(express.static(path.join(__dirname, "..")));
->>>>>>> 93338859cdb177e485cfbbc1316a429cfd631e4b
 
 // ===== Routes =====
 app.get("/login", (req, res) => {
@@ -48,8 +38,6 @@ app.get("/login", (req, res) => {
 app.get("/register", (req, res) => {
     res.render('register.ejs');
 });
-
-<<<<<<< HEAD
 // ===============================
 // ✅ PDF Upload → Python → MongoDB
 // ===============================
@@ -92,15 +80,12 @@ app.post("/upload", upload.single("files"), async (req, res) => {
     }
 });
 
-// ===== Auth Routes =====
-app.use("/auth", require("../routes/auth"));
-=======
-app.post("/upload", upload.single("files"), (req, res) => {
-    res.json({ success: true });
+app.post("/upload", upload.array("files", 10), (req, res) => {
+    console.log(req.files); // array of uploaded files
+    res.json({ success: true, files: req.files });
 });
 
 // ✅ use router
->>>>>>> 93338859cdb177e485cfbbc1316a429cfd631e4b
 app.use("/", authRoutes);
 
 module.exports = app;
